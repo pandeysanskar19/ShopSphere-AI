@@ -1,9 +1,7 @@
 import streamlit as st
 from agents.orchestrator_agent import orchestrator_agent
 
-# --------------------------------------------------
-# PAGE CONFIG
-# --------------------------------------------------
+#PAGE CONFIG
 
 st.set_page_config(
     page_title="ShopSphere AI",
@@ -11,9 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --------------------------------------------------
-# CUSTOM CSS
-# --------------------------------------------------
+#CUSTOM CSS
 
 st.markdown("""
 <style>
@@ -53,9 +49,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --------------------------------------------------
-# HEADER
-# --------------------------------------------------
+#HEADER
 
 st.markdown(
     """
@@ -70,9 +64,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --------------------------------------------------
-# FEATURE SECTION
-# --------------------------------------------------
+#FEATURE SECTION
 
 col1, col2, col3 = st.columns(3)
 
@@ -102,69 +94,74 @@ with col3:
 
 st.divider()
 
-# --------------------------------------------------
-# SIDEBAR
-# --------------------------------------------------
+#SIDEBAR
 
 with st.sidebar:
 
-    st.title("🤖 System Info")
+    # Header
+    st.title("🛒 ShopSphere AI")
+    st.caption("⚡ Your Gemini-Powered Shopping Assistant")
 
-    st.success("Gemini Router Agent")
+    st.divider()
+
+    # Example Queries
+    st.subheader("💡 Example Queries")
+
+    st.code("Find gaming laptops under ₹80,000", language=None)
+    st.code("Recommend a phone for photography", language=None)
+    st.code("Track my order #12345", language=None)
+
+    st.divider()
+
+    # Features
+    st.subheader("Features")
 
     st.markdown("""
-### Architecture
+    - 🔍 Product Search
+    - 🎯 Smart Recommendations
+    - 📦 Order Tracking
+    - 💬 Natural Language Queries
+    - ⚡ Multi-Agent Routing
+    """)
 
-User Query
-                
-↓
-                
-Gemini Router Agent
-                
-↓
-                
-• Product Agent
+    st.divider()
 
-• Recommendation Agent
+    # Tech Stack
+    st.subheader("🛠️ Tech Stack")
 
-• Order Agent
+    st.markdown("""
+    - Python
+    - Streamlit
+    - Gemini 2.5 Flash
+    - Multi-Agent Architecture
+    - JSON Database
+    """)
 
-### Tech Stack
+    st.divider()
 
-- Python
-- Streamlit
-- Gemini 2.5 Flash
-- Multi-Agent Architecture
-- JSON Database
-                
-👨‍💻 Built By
+    # Developers
+    st.subheader("👨‍💻 Developers")
 
-ShopSphere AI is developed by:
+    st.markdown("""
+    **Sanskar Pandey**  
+    **Shashmit Mishra**
 
--Sanskar Pandey & Shashmit Mishra
-                
--AI & Software Development Enthusiasts               
-""")
+    *AI & Software Development Enthusiasts*
+    """)
 
-# --------------------------------------------------
-# CHAT MEMORY
-# --------------------------------------------------
+#CHAT MEMORY
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# --------------------------------------------------
-# DISPLAY CHAT
-# --------------------------------------------------
+#DISPLAY CHAT
 
 for message in st.session_state.messages:
 
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# --------------------------------------------------
-# USER INPUT
-# --------------------------------------------------
+#USER INPUT
 
 prompt = st.chat_input(
     "Ask about products, recommendations, or orders..."
@@ -201,9 +198,7 @@ if prompt:
         }
     )
 
-# --------------------------------------------------
-# FOOTER
-# --------------------------------------------------
+#FOOTER
 
 st.divider()
 
