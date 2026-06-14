@@ -185,7 +185,10 @@ python -m pytest tests/
 
 B.Tech CSE (AI Specialization) — Pranveer Singh Institute Of Technology — AKTU University, 2028
 
+For any Collaboration,contact:
+Mail id:pandeysanskar1809@gmail.com
 
+LinkedIn : https://www.linkedin.com/in/sanskar-pandey-b43689326/
 
 ## 📄 License
 
